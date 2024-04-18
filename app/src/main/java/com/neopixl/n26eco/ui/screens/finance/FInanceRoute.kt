@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 fun FinanceRoute(
     onBack: () -> Unit,
     showSnackbar: (Int, Int) -> Unit,
+    navigateToDetail:()->Unit
 ){
     FinanceScreen()
 }

@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 fun DetailRoute(
     onBack: () -> Unit,
     showSnackbar: (Int, Int) -> Unit,
+    navigateToInvest:()->Unit
 ){
         DetailScreen()
 }

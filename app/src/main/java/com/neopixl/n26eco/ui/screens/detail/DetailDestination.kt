@@ -5,6 +5,8 @@ import androidx.compose.animation.fadeOut
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.neopixl.n26eco.navigation.N26NavigationDestination
+import com.neopixl.n26eco.navigation.navigateToInvest
+import com.neopixl.n26eco.ui.screens.invest.InvestDestination
 
 object DetailDestination : N26NavigationDestination {
     override val route = "detail"
@@ -21,11 +23,17 @@ fun NavGraphBuilder.detailGraph(
         enterTransition = { fadeIn() },
         exitTransition = { fadeOut() },
         popEnterTransition = { fadeIn() },
-        popExitTransition = { fadeOut() }
+        popExitTransition = { fadeOut() },
+
     ) {
         DetailRoute(
             onBack = onBackClick,
             showSnackbar = showSnackBar,
+            navigateToInvest = {
+                onNavigateToDestination(
+                    InvestDestination, navigateToInvest()
+                )
+            }
         )
     }
 }
