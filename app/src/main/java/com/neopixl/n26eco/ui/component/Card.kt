@@ -199,7 +199,7 @@ fun TransactionCard(
             ) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
 
-                    AsyncImage(
+                  /*  AsyncImage(
                         modifier = Modifier
                             .size(50.dp)
                             .clip(CircleShape)
@@ -208,7 +208,7 @@ fun TransactionCard(
                         contentDescription = "",
                         clipToBounds = true,
                         contentScale = ContentScale.FillBounds
-                    )
+                    )*/
                     Column(modifier=Modifier.padding(start = 16.dp)) {
                         Text(
                             text = title,
