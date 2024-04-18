@@ -1,6 +1,7 @@
 package com.neopixl.n26eco.ui.screens.finance
 
 import androidx.compose.runtime.Composable
+import com.neopixl.n26eco.model.sumTransactionAmounts
 
 @Composable
 fun FinanceRoute(
@@ -8,5 +9,5 @@ fun FinanceRoute(
     showSnackbar: (Int, Int) -> Unit,
     navigateToDetail: () -> Unit
 ) {
-    FinanceScreen(totalAmount = 35.5f, ecoAmount = 10f, navigateToDetail = navigateToDetail)
+    FinanceScreen(totalAmount = 35.5f, ecoAmount = sumTransactionAmounts(), navigateToDetail = navigateToDetail)
 }

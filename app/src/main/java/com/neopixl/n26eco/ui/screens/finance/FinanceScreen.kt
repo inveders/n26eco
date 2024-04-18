@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.neopixl.n26eco.model.sumTransactionAmounts
 import com.neopixl.n26eco.ui.component.GenericCard
 import com.neopixl.n26eco.ui.component.RoundedButton
 import com.neopixl.n26eco.ui.component.TransparentCard
@@ -32,7 +33,7 @@ import com.neopixl.n26eco.ui.theme.N26EcoTheme
 fun FinanceScreen(){
     N26EcoTheme {
 
-        FinanceScreen(totalAmount = 35.5f, ecoAmount = 10f, navigateToDetail = {})
+        FinanceScreen(totalAmount = 35.5f, ecoAmount = sumTransactionAmounts(), navigateToDetail = {})
     }
 }
 
