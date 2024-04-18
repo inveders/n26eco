@@ -2,6 +2,7 @@ package com.neopixl.n26eco.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,7 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -33,18 +33,28 @@ import com.neopixl.n26eco.ui.theme.N26EcoTheme
 @Composable
 fun PreviewGreenCard() {
     N26EcoTheme {
-        GreenCard(title = "Main Account",amount=35.5f)
+        GenericCard(title = "Main Account", amount = 35.5f, onClick = {})
     }
 
 }
 
 @Composable
-fun GreenCard(title: String, amount:Float,cardColor:Color=AppTheme.colors.green) {
+fun GenericCard(
+    title: String,
+    amount: Float,
+    icon: ImageVector = Icons.Filled.Favorite,
+    cardColor: Color = AppTheme.colors.green,
+    modifier: Modifier = Modifier,
+    onClick:()->Unit
+) {
     Box(
-        modifier = Modifier
+        modifier = modifier
             .clip(RoundedCornerShape(4.dp)) // Set corner radius to 8.dp
             .background(cardColor) // Assuming AppTheme.colors.green is defined in your theme
             .padding(16.dp)
+            .clickable {
+                onClick()
+            }
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -53,7 +63,7 @@ fun GreenCard(title: String, amount:Float,cardColor:Color=AppTheme.colors.green)
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Icon(
-                    imageVector = Icons.Filled.Favorite, // Example icon
+                    imageVector = icon, // Example icon
                     contentDescription = "Example Icon",
                     tint = Color.White,
                     modifier = Modifier.padding(end = 8.dp)
@@ -70,8 +80,7 @@ fun GreenCard(title: String, amount:Float,cardColor:Color=AppTheme.colors.green)
                 color = Color.White,
                 textAlign = TextAlign.End,
                 modifier = Modifier
-                    .padding(start = 8.dp)
-                ,
+                    .padding(start = 8.dp),
                 fontSize = 14.sp,
                 style = AppTheme.typography.montserratTitle1,
             )
@@ -98,7 +107,7 @@ fun TransparentCard(title: String, description: String, icon: ImageVector) {
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(4.dp))
-            .border(0.5.dp, AppTheme.colors.lightGray,RoundedCornerShape(4.dp))
+            .border(0.5.dp, AppTheme.colors.lightGray, RoundedCornerShape(4.dp))
 
             .padding(16.dp)
     ) {

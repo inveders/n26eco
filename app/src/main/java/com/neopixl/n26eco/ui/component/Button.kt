@@ -1,5 +1,6 @@
 package com.neopixl.n26eco.ui.component
 
+import android.graphics.Color
 import com.neopixl.n26eco.ui.theme.N26EcoTheme
 
 import androidx.compose.foundation.background
@@ -29,6 +30,7 @@ fun RoundedButton(
     onClick: () -> Unit,
     backgroundColor: androidx.compose.ui.graphics.Color = AppTheme.colors.green,
     icon: ImageVector = Icons.Filled.Add,
+    colorIcon: androidx.compose.ui.graphics.Color = AppTheme.colors.black,
     hasBorder: Boolean = false
 ) {
 
@@ -51,7 +53,7 @@ fun RoundedButton(
             Icon(
                 imageVector = icon, // Use the "+" icon from material icons
                 contentDescription = "Add",
-                tint = AppTheme.colors.black // Set the icon color
+                tint = colorIcon // Set the icon color
             )
         }
         Text(
