@@ -7,7 +7,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
 class AppColors(
-    yellow: Color,
+    green: Color,
     black: Color,
     white: Color,
     lightGray: Color,
@@ -17,7 +17,7 @@ class AppColors(
     isLight: Boolean
 ) {
 
-    var yellow by mutableStateOf(yellow)
+    var green by mutableStateOf(green)
         private set
     var black by mutableStateOf(black)
         private set
@@ -36,7 +36,7 @@ class AppColors(
         internal set
 
     fun copy(
-        yellow: Color = this.yellow,
+        green: Color = this.green,
         black: Color = this.black,
         white: Color = this.white,
         lightGray: Color = this.lightGray,
@@ -45,7 +45,7 @@ class AppColors(
         orange: Color=this.orange,
         isLight: Boolean = this.isLight
     ): AppColors = AppColors(
-        yellow,
+        green,
         black,
         white,
         lightGray,
@@ -56,7 +56,7 @@ class AppColors(
     )
 
     fun updateColorsFrom(other: AppColors) {
-        yellow = other.yellow
+        green = other.green
         black = other.black
         white = other.white
         lightGray = other.lightGray
@@ -66,7 +66,7 @@ class AppColors(
     }
 }
 
-private val colorLightYellow = Color(0xFFF9B10D)
+private val colorLightGreen = Color(0xFF008080)
 private val colorLightBlack = Color(0xFF000000)
 private val colorLightWhite = Color(0xFFFFFFFF)
 private val colorLightLightGray = Color(0xFFF3F3F4)
@@ -74,7 +74,7 @@ private val colorLightRed = Color(0xFFCC0000)
 private val colorLightBlue = Color(0xFF36419D)
 private val colorLightOrange = Color(0xFFe3802b)
 
-private val colorDarkYellow = Color(0xFFF9B10D)
+private val colorDarkGreen = Color(0xFF008080)
 private val colorDarkBlack = Color(0xFFD9D9D9)
 private val colorDarkWhite = Color(0xFF1A1A1A)
 private val colorDarkLightGray = Color(0xFFF3F3F4)
@@ -83,7 +83,7 @@ private val colorDarkBlue = Color(0xFF36419D)
 private val colorDarkOrange = Color(0xFFe3802b)
 
 fun lightColors(
-    yellow: Color = colorLightYellow,
+    green: Color = colorLightGreen,
     black: Color = colorLightBlack,
     white: Color = colorLightWhite,
     lightGray: Color = colorLightLightGray,
@@ -91,7 +91,7 @@ fun lightColors(
     blue: Color= colorLightBlue,
     orange: Color= colorLightOrange
 ): AppColors = AppColors(
-    yellow = yellow,
+    green = green,
     black = black,
     white = white,
     lightGray = lightGray,
@@ -102,7 +102,7 @@ fun lightColors(
 )
 
 fun darkColors(
-    yellow: Color = colorDarkYellow,
+    green: Color = colorDarkGreen,
     black: Color = colorDarkBlack,
     white: Color = colorDarkWhite,
     lightGray: Color = colorDarkLightGray,
@@ -110,7 +110,7 @@ fun darkColors(
     blue: Color= colorDarkBlue,
     orange: Color= colorDarkOrange
 ): AppColors = AppColors(
-    yellow = yellow,
+    green = green,
     black = black,
     white = white,
     lightGray = lightGray,
