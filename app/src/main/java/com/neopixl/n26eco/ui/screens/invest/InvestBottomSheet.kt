@@ -1,7 +1,9 @@
 package com.neopixl.n26eco.ui.screens.invest
 
 import android.content.res.Configuration
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,12 +14,16 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.BottomSheetDefaults
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TextFieldColors
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -53,45 +59,73 @@ fun InvestBottomSheet(project: EcoProject, onDismiss: () -> Unit) {
         dragHandle = {
             BottomSheetDefaults.DragHandle()
         },
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize(),
+        containerColor = AppTheme.colors.white
     ) {
         //Sheet content
-        Text(
-            text = "${project.name}",
-            modifier = Modifier.padding(bottom = 16.dp),
-            fontWeight = FontWeight.ExtraBold,
-            color = AppTheme.colors.black
-        )
-
-        OutlinedTextField(
-            value = "$amount €",
-            onValueChange = { amount = it },
-            label = { Text("Montant à investir") },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            modifier = Modifier.fillMaxWidth()
-        )
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(15.dp)
         ) {
-            Button(onClick = { onDismiss() }) {
-                Text("Annuler")
+            Text(
+                text = "${project.name}",
+                modifier = Modifier.padding(bottom = 16.dp),
+                fontWeight = FontWeight.ExtraBold,
+                color = AppTheme.colors.black
+            )
+
+            OutlinedTextField(
+                value = "$amount €",
+                onValueChange = { amount = it },
+                label = {
+                    Text(
+                        text = "Montant à investir",
+                        color = AppTheme.colors.black
+                    )
+                },
+                singleLine = true,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                Button(
+                    onClick = { onDismiss() },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = AppTheme.colors.green,
+                        contentColor = AppTheme.colors.black
+                    )
+                ) {
+                    Text(text = "Annuler")
+                }
+
+                Button(
+                    onClick = {  },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = AppTheme.colors.green,
+                        contentColor = AppTheme.colors.black
+                    )
+                ) {
+                    Text("Confirmer")
+                }
             }
 
-            Button(onClick = {  }) {
-                Text("Confirmer")
+            Spacer(modifier = Modifier.height(8.dp))
+
+            TextButton(onClick = {  }) {
+                Text(
+                    text = "Plus d'informations sur le projet",
+                    color = AppTheme.colors.green
+                )
             }
         }
 
-        Spacer(modifier = Modifier.height(8.dp))
-
-        TextButton(onClick = {  }) {
-            Text("Plus d'informations sur le projet")
-        }
     }
 }
 
