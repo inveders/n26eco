@@ -53,7 +53,11 @@ fun InvestScreen(onBack: () -> Unit) {
         }
     }
 
-    LazyColumn {
+    LazyColumn(
+        Modifier.background(
+            color = AppTheme.colors.white.copy(alpha = 0.9f)
+        )
+    ) {
         //Open the bottom sheet on click on card
         item {
             InvestScreenHeader(onBack)
