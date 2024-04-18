@@ -8,5 +8,5 @@ fun DetailRoute(
     showSnackbar: (Int, Int) -> Unit,
     navigateToInvest:()->Unit
 ){
-        DetailScreen()
+        DetailScreen(navigateToInvest=navigateToInvest)
 }

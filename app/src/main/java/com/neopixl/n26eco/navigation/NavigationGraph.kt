@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.neopixl.n26eco.ui.screens.detail.detailGraph
+import com.neopixl.n26eco.ui.screens.finance.FinanceDestination
 import com.neopixl.n26eco.ui.screens.finance.financeGraph
 import com.neopixl.n26eco.ui.screens.generics.genericGraph
 import com.neopixl.n26eco.ui.screens.invest.InvestDestination
@@ -22,7 +23,7 @@ fun NavigationGraph(
     NavHost(
         modifier = modifier,
         navController = navController,
-        startDestination = InvestDestination.route
+        startDestination = FinanceDestination.route
     ) {
         detailGraph(
             onBackClick=onBackClick,
