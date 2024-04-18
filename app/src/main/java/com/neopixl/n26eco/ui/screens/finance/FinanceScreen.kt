@@ -13,6 +13,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -89,7 +90,7 @@ fun FinanceScreen(totalAmount:Float,ecoAmount:Float,navigateToDetail:()->Unit){
                     text = "Automations",
                     hasBorder = true,
                     backgroundColor = AppTheme.colors.white.copy(alpha=0f),
-                    icon = Icons.Filled.ShoppingCart, //TODO debago change icon
+                    icon = Icons.Filled.Star, //TODO debago change icon
                     colorIcon = AppTheme.colors.white,
                     onClick = { /*TODO*/ }
                 )
