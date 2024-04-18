@@ -31,18 +31,16 @@ import com.neopixl.n26eco.ui.theme.N26EcoTheme
 
 @Composable
 fun EcoProjectCard(
-	modifier: Modifier,
+	modifier: Modifier = Modifier,
 	project: EcoProject
 ) {
 	Surface(
 		modifier = modifier,
 		shape = RoundedCornerShape(16.dp),
+		shadowElevation = 3.dp,
+		color = AppTheme.colors.white
 	) {
-		Column(
-			Modifier.background(
-				color = AppTheme.colors.white
-			)
-		) {
+		Column {
 			Box {
 				AsyncImage(
 					modifier = Modifier
@@ -56,7 +54,15 @@ fun EcoProjectCard(
 				Text(
 					modifier = Modifier
 						.align(Alignment.BottomEnd)
-						.padding(10.dp),
+						.padding(10.dp)
+						.background(
+							color = AppTheme.colors.black,
+							shape = RoundedCornerShape(50.dp)
+						)
+						.padding(
+							horizontal = 5.dp,
+							vertical = 2.dp
+						),
 					text = "${project.location?.country}, ${project.location?.city}",
 					fontWeight = FontWeight.ExtraBold,
 					color = AppTheme.colors.white
