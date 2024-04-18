@@ -15,7 +15,7 @@ data class EcoProjectMock(
 	val project : EcoProject = EcoProject(
 		"azertyuiop",
 		"City park",
-		"https://images.adsttc.com/media/images/64e7/c323/f…dade-seis-projetos-bem-sucedidos_2.jpg?1692910384",
+		"https://www.jerdonlp.com/wp-content/uploads/2019/03/Park-Jerdon-March14-1110x630.jpg",
 		ProjectLocation(
 			"Luxembourg",
 			"Differdange"

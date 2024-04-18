@@ -8,5 +8,5 @@ fun InvestRoute(
     onBack: () -> Unit,
     showSnackbar: (Int, Int) -> Unit,
 ){
-    Text(text = "Invest Route")
+    InvestScreen(onBack)
 }
