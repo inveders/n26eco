@@ -37,7 +37,7 @@ fun ProjectInvestmentBar(
 	) {
 		Surface(
 			shape = RoundedCornerShape(percent = 50),
-			border = BorderStroke(1.dp, AppTheme.colors.yellow)
+			border = BorderStroke(1.dp, AppTheme.colors.green)
 		) {
 			LinearProgressIndicator(
 				modifier = Modifier
@@ -45,7 +45,7 @@ fun ProjectInvestmentBar(
 					.height(20.dp)
 					.clipToBounds(),
 				progress = percent,
-				color = AppTheme.colors.yellow,
+				color = AppTheme.colors.green,
 				trackColor = Color.DarkGray
 			)
 		}
