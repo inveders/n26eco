@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -29,9 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.neopixl.n26eco.model.EcoProject
 import com.neopixl.n26eco.model.EcoProjectMock
-import com.neopixl.n26eco.ui.component.RoundedButton
 import com.neopixl.n26eco.ui.design.EcoProjectCard
 import com.neopixl.n26eco.ui.theme.AppTheme
 import com.neopixl.n26eco.ui.theme.N26EcoTheme
@@ -42,11 +39,11 @@ fun InvestScreen(onBack: () -> Unit) {
     val coroutineScope = rememberCoroutineScope()
     var showSheet by remember { mutableStateOf(false) }
     val projects = listOf(
-        EcoProjectMock().project,
-        EcoProjectMock().project,
-        EcoProjectMock().project,
-        EcoProjectMock().project,
-        EcoProjectMock().project
+        EcoProjectMock().project1,
+        EcoProjectMock().project2,
+        EcoProjectMock().project1,
+        EcoProjectMock().project1,
+        EcoProjectMock().project1
     )
     var selectedCard by remember { mutableStateOf(projects.first()) }
 

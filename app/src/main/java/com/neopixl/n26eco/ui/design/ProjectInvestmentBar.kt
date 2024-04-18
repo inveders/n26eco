@@ -2,9 +2,7 @@ package com.neopixl.n26eco.ui.design
 
 import android.content.res.Configuration
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -22,7 +20,6 @@ import androidx.compose.ui.unit.dp
 import com.neopixl.n26eco.model.EcoProjectMock
 import com.neopixl.n26eco.model.ProjectInvestment
 import com.neopixl.n26eco.ui.theme.AppTheme
-import kotlin.math.roundToInt
 
 @Composable
 fun ProjectInvestmentBar(
@@ -60,7 +57,7 @@ fun ProjectInvestmentBar(
 @Composable
 fun ProjectInvestmentBarPreview() {
 	MaterialTheme {
-		EcoProjectMock().project.investment?.let {
+		EcoProjectMock().project1.investment?.let {
 			ProjectInvestmentBar(investment = it)
 		}
 	}
